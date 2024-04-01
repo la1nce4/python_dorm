@@ -83,7 +83,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'python_dorm',
         'USER': 'root',
-        'PASSWORD': '4643830',
+        'PASSWORD': '123456',
         'HOST': '127.0.0.1',
         'PORT': '3306',
         'OPTIONS': {
@@ -145,6 +145,12 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # 跨域配置
-#CORS_ALLOW_CREDENTIALS = True
-#CORS_ALLOW_ALL_ORIGINS = True
-#CORS_ALLOW_HEADERS = '*'
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_HEADERS = '*'
+
+
+
+
+
+

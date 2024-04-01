@@ -54,9 +54,14 @@ def create(request):
         return APIResponse(code=1, msg='演示帐号无法操作')
 
     serializer = ThingSerializer(data=request.data)
+    print("撒啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊")
+    print(serializer.is_valid())
     if serializer.is_valid():
+        print('sssssssssss0',serializer.is_valid())
+
         serializer.save()
-        return APIResponse(code=0, msg='创建成功', data=serializer.data)
+        # return APIResponse(code=0, msg='创建成功', data=serializer.data)
+        return APIResponse(code=0, msg='创建成功')
     else:
         print(serializer.errors)
         utils.log_error(request, '参数错误')

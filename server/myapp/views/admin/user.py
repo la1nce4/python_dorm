@@ -1,5 +1,6 @@
 # Create your views here.
 import datetime
+import logging
 
 from rest_framework.decorators import api_view, authentication_classes
 
@@ -35,6 +36,7 @@ def admin_login(request):
     password = utils.md5value(request.data['password'])
 
     users = User.objects.filter(username=username, password=password, role__in=['1', '3'])
+    print(users,username,password)
     if len(users) > 0:
         user = users[0]
         data = {
