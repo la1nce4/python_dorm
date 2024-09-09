@@ -36,5 +36,8 @@ urlpatterns = [
     path('admin/errorLog/list', views.admin.errorLog.list_api),
 
 
+    path('admin/huluwa/list', views.admin.huluwa.list_api),
+
+
 
 ]

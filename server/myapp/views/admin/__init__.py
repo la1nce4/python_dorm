@@ -11,3 +11,4 @@ from myapp.views.admin.errorLog import *
 from myapp.views.admin.banner import *
 from myapp.views.admin.ad import *
 from myapp.views.admin.notice import *
+from myapp.views.admin.huluwa import *

@@ -183,3 +183,24 @@ class Address(models.Model):
 
     class Meta:
         db_table = "b_address"
+
+class Huluwa(models.Model):
+    CHANNEL_CHOICES = (
+        ('0', '贵旅优品'),
+        ('1', '新联惠购'),
+        ('1', '乐旅商城'),
+        ('1', '遵航出山'),
+        ('1', '航旅黔购'),
+        ('1', '贵盐黔品'),
+        ('1', '空港乐购'),
+    )
+    id = models.BigAutoField(primary_key=True)
+    channer_name = models.CharField(max_length=1,choices=CHANNEL_CHOICES, default='')
+    create_time = models.DateTimeField(auto_now_add=True, null=True)
+    activity_id = models.CharField(max_length=100, blank=True, null=True)
+    name = models.CharField(max_length=100, blank=True, null=True)
+    id_card = models.CharField(max_length=18, blank=True, null=True)
+    mobile = models.CharField(max_length=30, blank=True, null=True)
+
+    class Meta:
+        db_table = "b_huluwa"

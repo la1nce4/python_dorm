@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
 from myapp.models import Thing, Classification, Tag, User, Comment, Record, LoginLog, OpLog, Banner, \
-    Ad, Notice, ErrorLog, Address
+    Ad, Notice, ErrorLog, Address, Huluwa
 
 
 class ThingSerializer(serializers.ModelSerializer):
@@ -139,3 +139,21 @@ class AddressSerializer(serializers.ModelSerializer):
     class Meta:
         model = Address
         fields = '__all__'
+
+class HuluwaSerializer(serializers.ModelSerializer):
+    create_time = serializers.DateTimeField(format='%Y-%m-%d %H:%M:%S', required=False)
+
+    class Meta:
+        model = Huluwa
+        # 返回所有字段
+        fields = '__all__'
+        # 只返回需要的字段
+        # fields = ['id','channer_name','id_card','mobile']
+
+class UpdateHuluwaSerializer(serializers.ModelSerializer):
+    create_time = serializers.DateTimeField(format='%Y-%m-%d %H:%M:%S', required=False)
+    class Meta:
+        model = Huluwa
+        # 排除多对多字段
+        exclude = ()
+
