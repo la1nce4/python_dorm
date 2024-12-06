@@ -62,7 +62,9 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
+        # 包含哪些字段
         fields = '__all__'
+        # 排除哪些字段
         # exclude = ('password',)
 
 

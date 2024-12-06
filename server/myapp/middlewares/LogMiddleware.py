@@ -34,7 +34,7 @@ class OpLogs(MiddlewareMixin):
                 're_url': request.path,
                 're_method': re_method,
                 're_ip': re_ip,
-                # 're_content': re_content,
+                're_content': re_content,
             }
         )
         # print(self.data)

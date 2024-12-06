@@ -19,7 +19,25 @@ from django.urls import path, include
 
 from server import settings
 
+#
+from drf_yasg.views import get_schema_view
+from drf_yasg import openapi
+
+
+schema_view = get_schema_view(
+    openapi.Info(
+        title="API接口文档平台",  # 必传
+        default_version='v1',  # 必传
+        description="这是一个接口文档",
+        license=openapi.License(name="BSD License"),
+    ),
+    public=True,
+    # permission_classes=(permissions.AllowAny,),   # 权限类
+)
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('myapp/', include('myapp.urls')),
+    # 以下是swagger路由配置
+    path('swagger', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
